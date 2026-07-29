@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OLIVE CAFE｜秋田市寺内のカフェ</title>
+<meta name="description" content="秋田県秋田市寺内神屋敷にあるOLIVE CAFEは、コーヒーとテイクアウトを提供するカフェです。予約不要で気軽に立ち寄れ、木の梁とコンクリートが調和した落ち着いた店内でゆったりとした時間を過ごせます。">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#4f5a3d">
+<style>
+  :root {
+    --color-primary: #3a3630;
+    --color-secondary: #ffffff;
+    --color-accent: #5c6b41;
+    --color-accent-dark: #48542f;
+    --color-background: #faf8f3;
+    --color-surface: #f1ede4;
+    --color-text: #2f2c27;
+    --color-muted: #6d6a62;
+    --color-border: #ddd6c7;
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--color-background);
+    background-image:
+      radial-gradient(circle at 12px 12px, rgba(92, 107, 65, 0.10) 1.5px, transparent 0),
+      radial-gradient(circle at 28px 28px, rgba(92, 107, 65, 0.06) 1.5px, transparent 0);
+    background-size: 40px 40px;
+    color: var(--color-text);
+    font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", "メイリオ", sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+
+  img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  a {
+    color: var(--color-accent-dark);
+  }
+
+  a:focus-visible,
+  button:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    background: var(--color-secondary);
+    color: var(--color-text);
+    padding: 12px 20px;
+    z-index: 1000;
+    border-radius: 0 0 8px 0;
+  }
+
+  .skip-link:focus {
+    left: 0;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  /* ==================== First View ==================== */
+  .hero {
+    position: relative;
+    min-height: 100svh;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+  }
+
+  .hero__image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 60%;
+    z-index: 0;
+  }
+
+  .hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(30, 28, 22, 0.35) 0%, rgba(30, 28, 22, 0.55) 60%, rgba(30, 28, 22, 0.8) 100%);
+    z-index: 1;
+  }
+
+  .hero__content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 40px 20px calc(48px + env(safe-area-inset-bottom, 0px));
+    color: var(--color-secondary);
+  }
+
+  .hero__inner {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .hero__title {
+    font-size: clamp(1.8rem, 7vw, 3rem);
+    line-height: 1.3;
+    margin: 0 0 8px;
+    font-weight: 700;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  }
+
+  .hero__tagline {
+    font-size: clamp(0.85rem, 2.8vw, 1.05rem);
+    letter-spacing: 0.08em;
+    margin: 0 0 16px;
+    color: var(--color-secondary);
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+  }
+
+  .hero__lead {
+    font-size: clamp(0.95rem, 3vw, 1.05rem);
+    line-height: 1.8;
+    margin: 0 0 28px;
+    max-width: 32em;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
+  }
+
+  .cta-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 360px;
+  }
+
+  @media (min-width: 480px) {
+    .cta-group {
+      flex-direction: row;
+      max-width: none;
+      flex-wrap: wrap;
+    }
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+    border: 2px solid transparent;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .btn--primary {
+    background-color: var(--color-accent);
+    color: var(--color-secondary);
+    border-color: var(--color-accent);
+  }
+
+  .btn--primary:hover {
+    background-color: var(--color-accent-dark);
+    border-color: var(--color-accent-dark);
+  }
+
+  .btn--outline {
+    background-color: transparent;
+    color: var(--color-secondary);
+    border-color: var(--color-secondary);
+  }
+
+  .btn--outline:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+
+  .btn--dark {
+    background-color: var(--color-accent);
+    color: var(--color-secondary);
+    border-color: var(--color-accent);
+  }
+
+  .btn--dark:hover {
+    background-color: var(--color-accent-dark);
+    border-color: var(--color-accent-dark);
+  }
+
+  /* ==================== Sections ==================== */
+  section {
+    padding: 64px 0;
+  }
+
+  .section--surface {
+    background-color: rgba(241, 237, 228, 0.75);
+  }
+
+  .section__heading {
+    font-size: clamp(1.4rem, 4.5vw, 2rem);
+    margin: 0 0 32px;
+    color: var(--color-primary);
+    text-align: center;
+    letter-spacing: 0.02em;
+  }
+
+  /* ==================== Concept ==================== */
+  .concept {
+    display: grid;
+    gap: 32px;
+    align-items: center;
+  }
+
+  @media (min-width: 768px) {
+    .concept {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .concept__image img {
+    border-radius: 8px;
+  }
+
+  .concept__text p {
+    margin: 0 0 20px;
+    font-size: 1rem;
+    line-height: 1.9;
+  }
+
+  .concept__text p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ==================== Feature Cards ==================== */
+  .card-grid {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 600px) {
+    .card-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .card {
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  .card__image img {
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+
+  .card__body {
+    padding: 24px;
+  }
+
+  .card__label {
+    display: inline-block;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    color: var(--color-accent-dark);
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .card__title {
+    font-size: 1.1rem;
+    margin: 0 0 10px;
+    color: var(--color-primary);
+  }
+
+  .card__text {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--color-text);
+    line-height: 1.8;
+  }
+
+  /* ==================== Flow / 過ごし方 ==================== */
+  .flow-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr;
+    counter-reset: flow;
+  }
+
+  @media (min-width: 768px) {
+    .flow-list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .flow-list li {
+    counter-increment: flow;
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 28px 20px;
+    text-align: center;
+    min-width: 0;
+  }
+
+  .flow-list li::before {
+    content: counter(flow);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: var(--color-accent);
+    color: var(--color-secondary);
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+
+  .flow-list h3 {
+    margin: 0 0 8px;
+    font-size: 1.05rem;
+    color: var(--color-primary);
+  }
+
+  .flow-list p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--color-muted);
+  }
+
+  /* ==================== Info ==================== */
+  .info-list {
+    margin: 0 auto;
+    max-width: 640px;
+    display: grid;
+    gap: 0;
+  }
+
+  .info-list dl {
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .info-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  @media (min-width: 600px) {
+    .info-row {
+      grid-template-columns: 140px 1fr;
+      gap: 16px;
+    }
+  }
+
+  .info-row dt {
+    font-weight: 700;
+    color: var(--color-primary);
+    font-size: 0.9rem;
+  }
+
+  .info-row dd {
+    margin: 0;
+    color: var(--color-text);
+    overflow-wrap: anywhere;
+  }
+
+  .info-map {
+    margin-top: 12px;
+  }
+
+  /* ==================== CTA Band ==================== */
+  .cta-band {
+    background-color: var(--color-accent-dark);
+    color: var(--color-secondary);
+    text-align: center;
+  }
+
+  .cta-band__heading {
+    font-size: clamp(1.2rem, 4vw, 1.6rem);
+    margin: 0 0 12px;
+  }
+
+  .cta-band__text {
+    margin: 0 0 28px;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 0.95rem;
+  }
+
+  .cta-band .cta-group {
+    margin: 0 auto;
+    justify-content: center;
+  }
+
+  /* ==================== Footer ==================== */
+  .site-footer {
+    background-color: var(--color-primary);
+    color: rgba(255, 255, 255, 0.85);
+    padding: 40px 0 calc(32px + env(safe-area-inset-bottom, 0px));
+    text-align: center;
+  }
+
+  .site-footer__logo {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 16px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  .site-footer__name {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0 0 6px;
+    color: var(--color-secondary);
+  }
+
+  .site-footer__links {
+    margin: 16px 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    font-size: 0.85rem;
+  }
+
+  .site-footer__links a {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .site-footer__copyright {
+    margin: 20px 0 0;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.6);
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">本文へ移動</a>
+
+<main id="main-content">
+
+  <!-- ==================== First View ==================== -->
+  <section class="hero" aria-label="OLIVE CAFE ファーストビュー">
+    <img class="hero__image" src="images/hero.webp" alt="" fetchpriority="high">
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <div class="hero__inner">
+        <h1 class="hero__title">OLIVE CAFE</h1>
+        <p class="hero__tagline">Olive Enriches Your Time</p>
+        <p class="hero__lead">秋田市寺内で、コーヒーとくつろぎの時間を届けるカフェ。予約不要で気軽に立ち寄れます。</p>
+        <div class="cta-group">
+          <a class="btn btn--primary" href="https://www.google.com/maps/search/?api=1&query=%E7%A7%8B%E7%94%B0%E7%9C%8C%E7%A7%8B%E7%94%B0%E5%B8%82%E5%AF%BA%E5%86%85%E7%A5%9E%E5%B1%8B%E6%95%B713-24" target="_blank" rel="noopener noreferrer">地図を見る</a>
+          <a class="btn btn--outline" href="https://www.instagram.com/olive_cafe.akita/" target="_blank" rel="noopener noreferrer">Instagramを見る</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== Concept ==================== -->
+  <section id="concept" aria-labelledby="concept-heading">
+    <div class="container">
+      <h2 id="concept-heading" class="section__heading">コンセプト</h2>
+      <div class="concept">
+        <div class="concept__image">
+          <img src="images/image2.webp" alt="木の梁とコンクリートの床が調和したOLIVE CAFEの店内">
+        </div>
+        <div class="concept__text">
+          <p>建物の趣を活かしながら、木の梁とコンクリートの床を組み合わせた店内は、あたたかみと落ち着きが同居する空間です。</p>
+          <p>コーヒーやドリンクは雰囲気のあるグラスで提供され、味わうひとときそのものを楽しめるよう工夫されています。</p>
+          <p>予約は不要で、営業時間内であればいつでも気軽に立ち寄れるスタイルで営業しています。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 店舗の特徴 ==================== -->
+  <section id="feature" class="section--surface" aria-labelledby="feature-heading">
+    <div class="container">
+      <h2 id="feature-heading" class="section__heading">店舗の特徴</h2>
+      <div class="card-grid">
+        <article class="card">
+          <div class="card__image">
+            <img src="images/image3.webp" alt="寺内の旧国道沿いに立つOLIVE CAFEの外観">
+          </div>
+          <div class="card__body">
+            <span class="card__label">01</span>
+            <h3 class="card__title">ふらっと立ち寄れる立地</h3>
+            <p class="card__text">寺内地区にあり、予約なしで気軽に入店できるカフェです。日常の中で立ち寄れる場所として営業しています。</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card__image">
+            <img src="images/image5.webp" alt="ワイングラスで提供されるOLIVE CAFEのアイスドリンク">
+          </div>
+          <div class="card__body">
+            <span class="card__label">02</span>
+            <h3 class="card__title">コーヒー・テイクアウト対応</h3>
+            <p class="card__text">コーヒーはイートインだけでなく、テイクアウトでも楽しめます。ドリンクの見せ方にもこだわりが感じられます。</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 過ごし方 ==================== -->
+  <section id="flow" aria-labelledby="flow-heading">
+    <div class="container">
+      <h2 id="flow-heading" class="section__heading">店舗での過ごし方</h2>
+      <ol class="flow-list">
+        <li>
+          <h3>商品を選ぶ</h3>
+          <p>コーヒーなどのドリンクをお選びいただけます。</p>
+        </li>
+        <li>
+          <h3>味わう</h3>
+          <p>落ち着いた雰囲気の中でゆっくりと味わえます。</p>
+        </li>
+        <li>
+          <h3>店内で過ごす</h3>
+          <p>木の梁とコンクリートが調和した空間でくつろげます。</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ==================== ドリンクと軽食を楽しむ ==================== -->
+  <section id="menu" class="section--surface" aria-labelledby="menu-heading">
+    <div class="container">
+      <h2 id="menu-heading" class="section__heading">ドリンクと軽食を楽しむ</h2>
+      <div class="concept">
+        <div class="concept__image">
+          <img src="images/image4.webp" alt="OLIVE CAFEのコーヒーと軽食のセット">
+        </div>
+        <div class="concept__text">
+          <p>ドリンクと軽食を一緒に楽しみながら、ゆっくりとした時間を過ごせます。</p>
+          <p>木のテーブルで過ごすひとときは、慌ただしい日常から少し離れる時間になります。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 店舗情報 ==================== -->
+  <section id="info" aria-labelledby="info-heading">
+    <div class="container">
+      <h2 id="info-heading" class="section__heading">店舗情報</h2>
+      <div class="info-list">
+        <dl>
+          <div class="info-row">
+            <dt>店名</dt>
+            <dd>OLIVE CAFE（オリーブカフェ）</dd>
+          </div>
+          <div class="info-row">
+            <dt>住所</dt>
+            <dd>
+              〒011-0905<br>
+              秋田県秋田市寺内神屋敷13-24
+              <div class="info-map">
+                <a class="btn btn--dark" href="https://www.google.com/maps/search/?api=1&query=%E7%A7%8B%E7%94%B0%E7%9C%8C%E7%A7%8B%E7%94%B0%E5%B8%82%E5%AF%BA%E5%86%85%E7%A5%9E%E5%B1%8B%E6%95%B713-24" target="_blank" rel="noopener noreferrer">地図を見る（外部サイトが開きます）</a>
+              </div>
+            </dd>
+          </div>
+          <div class="info-row">
+            <dt>営業時間</dt>
+            <dd>最新の営業時間はInstagramをご確認ください。</dd>
+          </div>
+          <div class="info-row">
+            <dt>定休日</dt>
+            <dd>不定休</dd>
+          </div>
+          <div class="info-row">
+            <dt>ご来店について</dt>
+            <dd>予約不要（ウォークインのみ）</dd>
+          </div>
+          <div class="info-row">
+            <dt>Instagram</dt>
+            <dd><a href="https://www.instagram.com/olive_cafe.akita/" target="_blank" rel="noopener noreferrer">@olive_cafe.akita（外部サイトが開きます）</a></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CTA ==================== -->
+  <section class="cta-band" aria-labelledby="cta-heading">
+    <div class="container">
+      <h2 id="cta-heading" class="cta-band__heading">来店・最新情報のご確認はこちら</h2>
+      <p class="cta-band__text">場所の確認や最新の営業状況は、地図と公式Instagramでご案内しています。</p>
+      <div class="cta-group">
+        <a class="btn btn--dark" href="https://www.google.com/maps/search/?api=1&query=%E7%A7%8B%E7%94%B0%E7%9C%8C%E7%A7%8B%E7%94%B0%E5%B8%82%E5%AF%BA%E5%86%85%E7%A5%9E%E5%B1%8B%E6%95%B713-24" target="_blank" rel="noopener noreferrer">地図を見る</a>
+        <a class="btn btn--dark" href="https://www.instagram.com/olive_cafe.akita/" target="_blank" rel="noopener noreferrer">Instagramを見る</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ==================== Footer ==================== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__logo">
+      <img src="images/image6.webp" alt="OLIVE CAFEのロゴマーク">
+    </div>
+    <p class="site-footer__name">OLIVE CAFE</p>
+    <nav class="site-footer__links" aria-label="フッターナビゲーション">
+      <a href="https://www.google.com/maps/search/?api=1&query=%E7%A7%8B%E7%94%B0%E7%9C%8C%E7%A7%8B%E7%94%B0%E5%B8%82%E5%AF%BA%E5%86%85%E7%A5%9E%E5%B1%8B%E6%95%B713-24" target="_blank" rel="noopener noreferrer">地図を見る</a>
+      <a href="https://www.instagram.com/olive_cafe.akita/" target="_blank" rel="noopener noreferrer">Instagram</a>
+    </nav>
+    <p class="site-footer__copyright">© OLIVE CAFE. All Rights Reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
