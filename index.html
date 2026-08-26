@@ -2,71 +2,52 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OLIVE CAFE｜秋田市寺内のカフェ</title>
-<meta name="description" content="秋田県秋田市寺内神屋敷にあるOLIVE CAFEは、コーヒーとテイクアウトを提供するカフェです。予約不要で気軽に立ち寄れ、木の梁とコンクリートが調和した落ち着いた店内でゆったりとした時間を過ごせます。">
-<meta name="robots" content="index,follow">
-<meta name="theme-color" content="#4f5a3d">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OLIVE CAFE（オリーブカフェ）｜地域に明かりを灯すサードプレイス｜提案用ページ</title>
+<meta name="description" content="秋田市寺内のOLIVE CAFE（オリーブカフェ）。空き店舗をリノベーションした落ち着いた空間で、地域に明かりを灯すサードプレイスを目指すカフェの魅力と、今後の可能性を紹介する提案用ページです。">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#faf7f2">
 <style>
   :root {
-    --color-primary: #3a3630;
+    --color-primary: #2c2a24;
     --color-secondary: #ffffff;
-    --color-accent: #5c6b41;
-    --color-accent-dark: #48542f;
-    --color-background: #faf8f3;
-    --color-surface: #f1ede4;
-    --color-text: #2f2c27;
-    --color-muted: #6d6a62;
-    --color-border: #ddd6c7;
+    --color-accent: #c17a3d;
+    --color-olive: #6b7353;
+    --color-background: #faf7f2;
+    --color-surface: #f1ece2;
+    --color-proposal: #eef2e9;
+    --color-text: #2c2a24;
+    --color-muted: #6b675e;
+    --color-border: #ddd6c8;
+    --space-1: 8px;
+    --space-2: 16px;
+    --space-3: 24px;
+    --space-4: 32px;
+    --space-5: 48px;
+    --space-6: 64px;
   }
 
-  *, *::before, *::after {
-    box-sizing: border-box;
-  }
+  * { box-sizing: border-box; }
 
-  html {
-    scroll-behavior: smooth;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    html {
-      scroll-behavior: auto;
-    }
-    * {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-    }
-  }
+  html { -webkit-text-size-adjust: 100%; }
 
   body {
     margin: 0;
-    background-color: var(--color-background);
-    background-image:
-      radial-gradient(circle at 12px 12px, rgba(92, 107, 65, 0.10) 1.5px, transparent 0),
-      radial-gradient(circle at 28px 28px, rgba(92, 107, 65, 0.06) 1.5px, transparent 0);
-    background-size: 40px 40px;
+    background: var(--color-background);
     color: var(--color-text);
     font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", "メイリオ", sans-serif;
     font-size: 16px;
     line-height: 1.8;
-    word-break: normal;
-    overflow-wrap: break-word;
+    overflow-x: hidden;
   }
 
-  img {
-    max-width: 100%;
-    width: 100%;
-    height: auto;
-    display: block;
-  }
+  img { max-width: 100%; height: auto; display: block; }
 
-  a {
-    color: var(--color-accent-dark);
-  }
+  a { color: var(--color-accent); }
 
   a:focus-visible,
-  button:focus-visible {
+  button:focus-visible,
+  [tabindex="-1"]:focus {
     outline: 3px solid var(--color-accent);
     outline-offset: 2px;
   }
@@ -75,590 +56,1006 @@
     position: absolute;
     left: -9999px;
     top: 0;
-    background: var(--color-secondary);
-    color: var(--color-text);
-    padding: 12px 20px;
-    z-index: 1000;
-    border-radius: 0 0 8px 0;
+    background: var(--color-primary);
+    color: var(--color-secondary);
+    padding: var(--space-2);
+    z-index: 100;
   }
-
   .skip-link:focus {
-    left: 0;
+    left: var(--space-2);
+    top: var(--space-2);
   }
 
   .container {
     width: 100%;
-    max-width: 1080px;
+    max-width: 960px;
     margin: 0 auto;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 0 var(--space-3);
   }
 
-  /* ==================== First View ==================== */
+  /* ---------- 提案用ラベル ---------- */
+  .proposal-banner {
+    background: var(--color-primary);
+    color: var(--color-secondary);
+    text-align: center;
+    padding: var(--space-1) var(--space-2);
+    font-size: clamp(12px, 3vw, 14px);
+    letter-spacing: 0.05em;
+  }
+
+  /* ---------- ヘッダー ---------- */
+  .site-title {
+    font-size: clamp(18px, 5vw, 22px);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    margin: 0;
+    overflow-wrap: anywhere;
+  }
+  nav.site-nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+  }
+  nav.site-nav a { text-decoration: none; color: var(--color-muted); }
+  nav.site-nav a:hover { color: var(--color-accent); }
+  .back-link {
+    font-size: 13px;
+    color: var(--color-muted);
+    text-decoration: underline;
+    overflow-wrap: anywhere;
+  }
+
+  /* ---------- ファーストビュー ---------- */
   .hero {
-    position: relative;
     min-height: 100svh;
     display: flex;
-    align-items: flex-end;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: var(--space-6) 0;
+    position: relative;
     overflow: hidden;
+    background: var(--color-primary);
   }
-
-  .hero__image {
+  .hero-media {
     position: absolute;
     inset: 0;
+    z-index: 0;
+  }
+  .hero-media img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 60%;
-    z-index: 0;
   }
-
-  .hero__overlay {
+  .hero-media::after {
+    content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(30, 28, 22, 0.35) 0%, rgba(30, 28, 22, 0.55) 60%, rgba(30, 28, 22, 0.8) 100%);
+    background: linear-gradient(180deg, rgba(44,42,36,0.55) 0%, rgba(44,42,36,0.72) 100%);
+  }
+  .hero-media .visual-caption {
+    position: absolute;
+    bottom: var(--space-2);
+    right: var(--space-2);
+    z-index: 1;
+    color: #fff;
+    font-size: 12px;
+    background: rgba(0,0,0,0.4);
+    padding: 4px 10px;
+    border-radius: 999px;
+  }
+  .hero .container {
+    position: relative;
     z-index: 1;
   }
-
-  .hero__content {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    padding: 40px 20px calc(48px + env(safe-area-inset-bottom, 0px));
-    color: var(--color-secondary);
+  .hero h1, .hero .catch { color: var(--color-secondary); }
+  .hero-eyebrow {
+    display: inline-block;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    color: #eef2e9;
+    border: 1px solid #b9c2ab;
+    padding: 4px 12px;
+    border-radius: 999px;
+    margin-bottom: var(--space-3);
   }
-
-  .hero__inner {
-    max-width: 720px;
-    margin: 0 auto;
-  }
-
-  .hero__title {
-    font-size: clamp(1.8rem, 7vw, 3rem);
-    line-height: 1.3;
-    margin: 0 0 8px;
+  .hero h1 {
+    font-size: clamp(32px, 8vw, 56px);
+    line-height: 1.25;
+    margin: 0 0 var(--space-2);
     font-weight: 700;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
   }
-
-  .hero__tagline {
-    font-size: clamp(0.85rem, 2.8vw, 1.05rem);
-    letter-spacing: 0.08em;
-    margin: 0 0 16px;
-    color: var(--color-secondary);
-    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+  .hero .catch {
+    font-size: clamp(16px, 4vw, 20px);
+    color: var(--color-accent);
+    margin: 0 0 var(--space-3);
+    font-weight: 700;
   }
-
-  .hero__lead {
-    font-size: clamp(0.95rem, 3vw, 1.05rem);
-    line-height: 1.8;
-    margin: 0 0 28px;
-    max-width: 32em;
-    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
+  /* 写真の上のキャッチは、写真の明るさに負けないよう白にする */
+  .hero .catch { color: #ffffff; }
+  .hero p.lead {
+    font-size: clamp(15px, 4vw, 17px);
+    color: #f3eee6;
+    max-width: 42em;
+    margin: 0 0 var(--space-4);
   }
-
   .cta-group {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: var(--space-2);
+    width: 100%;
     max-width: 360px;
   }
-
-  @media (min-width: 480px) {
-    .cta-group {
-      flex-direction: row;
-      max-width: none;
-      flex-wrap: wrap;
-    }
+  @media (min-width: 560px) {
+    .cta-group { flex-direction: row; max-width: none; }
   }
-
   .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 48px;
+    min-height: 44px;
     padding: 12px 24px;
     border-radius: 6px;
-    font-size: 0.95rem;
-    font-weight: 700;
     text-decoration: none;
+    font-size: 15px;
+    font-weight: 700;
     text-align: center;
-    border: 2px solid transparent;
-    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    border: 1px solid transparent;
+    cursor: pointer;
   }
-
-  .btn--primary {
-    background-color: var(--color-accent);
+  .btn-primary {
+    background: var(--color-accent);
     color: var(--color-secondary);
-    border-color: var(--color-accent);
   }
-
-  .btn--primary:hover {
-    background-color: var(--color-accent-dark);
-    border-color: var(--color-accent-dark);
+  .btn-secondary {
+    background: transparent;
+    color: var(--color-primary);
+    border-color: var(--color-primary);
   }
-
-  .btn--outline {
-    background-color: transparent;
+  .hero .btn-secondary {
     color: var(--color-secondary);
     border-color: var(--color-secondary);
   }
 
-  .btn--outline:hover {
-    background-color: rgba(255, 255, 255, 0.15);
+  /* ---------- セクション共通 ---------- */
+  section { padding: var(--space-6) 0; }
+  .section-label {
+    display: inline-block;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    color: var(--color-olive);
+    margin-bottom: var(--space-1);
+  }
+  h1, h2, .feature-panel h3 {
+    font-family: "Yu Mincho", "Hiragino Mincho ProN", "游明朝", serif;
   }
 
-  .btn--dark {
-    background-color: var(--color-accent);
-    color: var(--color-secondary);
-    border-color: var(--color-accent);
+  h2 {
+    font-size: clamp(22px, 5vw, 30px);
+    margin: 0 0 var(--space-3);
+    line-height: 1.4;
   }
-
-  .btn--dark:hover {
-    background-color: var(--color-accent-dark);
-    border-color: var(--color-accent-dark);
+  .section-intro {
+    color: var(--color-muted);
+    max-width: 46em;
+    margin: 0 0 var(--space-4);
   }
+  .surface { background: var(--color-surface); }
 
-  /* ==================== Sections ==================== */
-  section {
-    padding: 64px 0;
-  }
-
-  .section--surface {
-    background-color: rgba(241, 237, 228, 0.75);
-  }
-
-  .section__heading {
-    font-size: clamp(1.4rem, 4.5vw, 2rem);
-    margin: 0 0 32px;
-    color: var(--color-primary);
-    text-align: center;
-    letter-spacing: 0.02em;
-  }
-
-  /* ==================== Concept ==================== */
-  .concept {
-    display: grid;
-    gap: 32px;
-    align-items: center;
-  }
-
-  @media (min-width: 768px) {
-    .concept {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-
-  .concept__image img {
-    border-radius: 8px;
-  }
-
-  .concept__text p {
-    margin: 0 0 20px;
-    font-size: 1rem;
-    line-height: 1.9;
-  }
-
-  .concept__text p:last-child {
-    margin-bottom: 0;
-  }
-
-  /* ==================== Feature Cards ==================== */
+  /* ---------- 強みカード ---------- */
   .card-grid {
     display: grid;
-    gap: 24px;
     grid-template-columns: 1fr;
+    gap: var(--space-3);
   }
-
-  @media (min-width: 600px) {
-    .card-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
+  @media (min-width: 700px) {
+    .card-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
   }
-
   .card {
-    background-color: var(--color-background);
+    background: var(--color-secondary);
     border: 1px solid var(--color-border);
+    border-radius: 10px;
+    padding: var(--space-3);
+    box-shadow: 0 2px 10px rgba(44,42,36,0.05);
+    min-width: 0;
+  }
+  .card-img-wrap {
+    position: relative;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-  }
-
-  .card__image img {
+    margin-bottom: var(--space-2);
     aspect-ratio: 4 / 3;
-    object-fit: cover;
+  }
+  .card-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+  .card-img-wrap .visual-caption {
+    position: absolute;
+    bottom: 6px;
+    right: 6px;
+    color: #fff;
+    font-size: 12px;
+    background: rgba(0,0,0,0.4);
+    padding: 2px 8px;
+    border-radius: 999px;
+  }
+  .card .card-tag {
+    font-size: 12px;
+    color: var(--color-olive);
+    letter-spacing: 0.06em;
+  }
+  .card h3 {
+    font-size: 18px;
+    margin: var(--space-1) 0 var(--space-2);
+  }
+  .card p { margin: 0 0 var(--space-1); font-size: 15px; color: var(--color-text); }
+  .card .card-value {
+    font-size: 14px;
+    color: var(--color-muted);
+    border-top: 1px dashed var(--color-border);
+    padding-top: var(--space-1);
+    margin-top: var(--space-2);
   }
 
-  .card__body {
-    padding: 24px;
+  /* ---------- ストーリー ---------- */
+  .story-block {
+    background: var(--color-secondary);
+    border-left: 4px solid var(--color-olive);
+    border-radius: 4px;
+    padding: var(--space-3) var(--space-3);
   }
+  .story-block p { margin: 0 0 var(--space-2); }
+  .story-block p:last-child { margin-bottom: 0; }
 
-  .card__label {
-    display: inline-block;
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
-    color: var(--color-accent-dark);
-    font-weight: 700;
-    margin-bottom: 8px;
-  }
-
-  .card__title {
-    font-size: 1.1rem;
-    margin: 0 0 10px;
-    color: var(--color-primary);
-  }
-
-  .card__text {
-    margin: 0;
-    font-size: 0.95rem;
-    color: var(--color-text);
-    line-height: 1.8;
-  }
-
-  /* ==================== Flow / 過ごし方 ==================== */
-  .flow-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    gap: 20px;
-    grid-template-columns: 1fr;
-    counter-reset: flow;
-  }
-
-  @media (min-width: 768px) {
-    .flow-list {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-
-  .flow-list li {
-    counter-increment: flow;
-    background-color: var(--color-background);
+  /* ---------- 一押し商品 ---------- */
+  .feature-panel {
+    background: linear-gradient(135deg, var(--color-surface), var(--color-background));
     border: 1px solid var(--color-border);
-    border-radius: 8px;
-    padding: 28px 20px;
-    text-align: center;
-    min-width: 0;
+    border-radius: 14px;
+    padding: var(--space-4);
   }
-
-  .flow-list li::before {
-    content: counter(flow);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background-color: var(--color-accent);
-    color: var(--color-secondary);
-    font-weight: 700;
-    margin-bottom: 14px;
+  .feature-visual {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 10px;
+    margin-bottom: var(--space-3);
+    position: relative;
+    overflow: hidden;
+    background: var(--color-surface);
   }
-
-  .flow-list h3 {
-    margin: 0 0 8px;
-    font-size: 1.05rem;
-    color: var(--color-primary);
+  .feature-visual .visual-caption {
+    position: absolute;
+    bottom: var(--space-2);
+    left: var(--space-2);
+    color: #fff;
+    font-size: 12px;
+    background: rgba(0,0,0,0.35);
+    padding: 4px 10px;
+    border-radius: 999px;
   }
-
-  .flow-list p {
-    margin: 0;
-    font-size: 0.9rem;
+  .feature-panel h3 {
+    font-size: clamp(20px, 5vw, 26px);
+    margin: 0 0 var(--space-2);
+  }
+  .feature-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin: var(--space-3) 0;
+    font-size: 14px;
     color: var(--color-muted);
   }
-
-  /* ==================== Info ==================== */
-  .info-list {
-    margin: 0 auto;
-    max-width: 640px;
-    display: grid;
-    gap: 0;
+  .feature-meta span {
+    background: var(--color-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    padding: 4px 12px;
   }
 
-  .info-list dl {
-    margin: 0;
+  /* ---------- 過ごし方 ---------- */
+  .use-list {
     display: grid;
     grid-template-columns: 1fr;
+    gap: var(--space-2);
   }
-
-  .info-row {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 4px;
-    padding: 16px 0;
-    border-bottom: 1px solid var(--color-border);
+  @media (min-width: 700px) {
+    .use-list { grid-template-columns: repeat(2, 1fr); }
   }
-
-  @media (min-width: 600px) {
-    .info-row {
-      grid-template-columns: 140px 1fr;
-      gap: 16px;
-    }
-  }
-
-  .info-row dt {
-    font-weight: 700;
-    color: var(--color-primary);
-    font-size: 0.9rem;
-  }
-
-  .info-row dd {
-    margin: 0;
-    color: var(--color-text);
-    overflow-wrap: anywhere;
-  }
-
-  .info-map {
-    margin-top: 12px;
-  }
-
-  /* ==================== CTA Band ==================== */
-  .cta-band {
-    background-color: var(--color-accent-dark);
-    color: var(--color-secondary);
-    text-align: center;
-  }
-
-  .cta-band__heading {
-    font-size: clamp(1.2rem, 4vw, 1.6rem);
-    margin: 0 0 12px;
-  }
-
-  .cta-band__text {
-    margin: 0 0 28px;
-    color: rgba(255, 255, 255, 0.9);
-    max-width: 520px;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 0.95rem;
-  }
-
-  .cta-band .cta-group {
-    margin: 0 auto;
-    justify-content: center;
-  }
-
-  /* ==================== Footer ==================== */
-  .site-footer {
-    background-color: var(--color-primary);
-    color: rgba(255, 255, 255, 0.85);
-    padding: 40px 0 calc(32px + env(safe-area-inset-bottom, 0px));
-    text-align: center;
-  }
-
-  .site-footer__logo {
-    width: 64px;
-    height: 64px;
-    margin: 0 auto 16px;
-    border-radius: 50%;
+  .use-item {
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background: var(--color-secondary);
     overflow: hidden;
   }
+  .use-item-body { padding: var(--space-2) var(--space-3); }
+  .use-item h3 { font-size: 16px; margin: 0 0 6px; }
+  .use-item p { margin: 0; font-size: 14px; color: var(--color-muted); }
+  .use-item .card-img-wrap { margin-bottom: 0; border-radius: 0; aspect-ratio: 16/9; }
 
-  .site-footer__name {
-    font-size: 1rem;
+  /* ---------- 提案セクション共通（試作デモ） ---------- */
+  .proposal-section {
+    background: var(--color-proposal);
+    border-top: 1px solid var(--color-olive);
+    border-bottom: 1px solid var(--color-olive);
+  }
+  .proposal-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
     font-weight: 700;
-    margin: 0 0 6px;
+    letter-spacing: 0.1em;
     color: var(--color-secondary);
+    background: var(--color-olive);
+    padding: 4px 12px;
+    border-radius: 4px;
+    margin-bottom: var(--space-2);
+  }
+  .proposal-note {
+    font-size: 14px;
+    color: var(--color-muted);
+    background: var(--color-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: var(--space-2) var(--space-3);
+    margin: var(--space-3) 0;
   }
 
-  .site-footer__links {
-    margin: 16px 0 0;
+  .quiz-app {
+    background: var(--color-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: 14px;
+    padding: var(--space-3);
+    max-width: 640px;
+  }
+  .quiz-intro h3 { margin: 0 0 var(--space-2); font-size: 20px; }
+  .quiz-progress {
+    font-size: 13px;
+    color: var(--color-muted);
+    margin-bottom: var(--space-2);
+  }
+  .quiz-question {
+    font-size: 17px;
+    font-weight: 700;
+    margin: 0 0 var(--space-2);
+  }
+  .quiz-options {
+    list-style: none;
+    margin: 0 0 var(--space-2);
+    padding: 0;
+    display: grid;
+    gap: 10px;
+  }
+  .quiz-option {
+    width: 100%;
+    text-align: left;
+    padding: 14px 16px;
+    min-height: 44px;
+    border: 1.5px solid var(--color-border);
+    border-radius: 8px;
+    background: var(--color-background);
+    font-size: 15px;
+    font-family: inherit;
+    color: var(--color-text);
+    cursor: pointer;
+  }
+  .quiz-option[aria-pressed="true"] {
+    border-color: var(--color-accent);
+    background: #fbeee0;
+    font-weight: 700;
+  }
+  .quiz-option[aria-pressed="true"]::before {
+    content: "✓ ";
+    color: var(--color-accent);
+  }
+  .quiz-nav {
     display: flex;
-    justify-content: center;
-    gap: 20px;
+    justify-content: space-between;
+    gap: var(--space-2);
+    margin-top: var(--space-3);
+  }
+  .quiz-nav button {
+    min-height: 44px;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: inherit;
+    cursor: pointer;
+  }
+  #quizBack { background: transparent; border: 1px solid var(--color-border); color: var(--color-text); }
+  #quizNext { background: var(--color-accent); border: 1px solid var(--color-accent); color: #fff; }
+  #quizNext:disabled, #quizBack:disabled { opacity: 0.4; cursor: not-allowed; }
+  .quiz-warning {
+    font-size: 13px;
+    color: #a0432a;
+    margin-top: var(--space-1);
+    min-height: 1.2em;
+  }
+  .quiz-result h3 { font-size: 22px; margin: 0 0 6px; }
+  .quiz-result .result-summary { color: var(--color-muted); margin: 0 0 var(--space-3); }
+  .result-detail-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--space-3);
+    display: grid;
+    gap: 4px;
+    font-size: 14px;
+  }
+  .result-detail-list dt { font-weight: 700; margin-top: var(--space-2); }
+  .result-detail-list dd { margin: 2px 0 0; color: var(--color-muted); }
+  .quiz-result-actions {
+    display: flex;
     flex-wrap: wrap;
-    font-size: 0.85rem;
+    gap: var(--space-2);
+  }
+  .quiz-start-btn {
+    min-height: 44px;
+    padding: 12px 28px;
+    background: var(--color-accent);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .disclaimer-box {
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--color-muted);
+    background: var(--color-background);
+    border: 1px dashed var(--color-border);
+    border-radius: 8px;
+    padding: var(--space-2);
+    margin-top: var(--space-3);
   }
 
-  .site-footer__links a {
-    color: rgba(255, 255, 255, 0.85);
+  /* ---------- 店舗情報 ---------- */
+  .info-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--color-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    overflow: hidden;
   }
+  .info-table th, .info-table td {
+    text-align: left;
+    padding: var(--space-2);
+    font-size: 14px;
+    border-bottom: 1px solid var(--color-border);
+    vertical-align: top;
+  }
+  .info-table th {
+    width: 34%;
+    color: var(--color-muted);
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .info-table tr:last-child th, .info-table tr:last-child td { border-bottom: none; }
+  .info-table td { overflow-wrap: anywhere; }
 
-  .site-footer__copyright {
-    margin: 20px 0 0;
-    font-size: 0.75rem;
-    color: rgba(255, 255, 255, 0.6);
+  .final-cta {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    margin-top: var(--space-4);
+  }
+  @media (min-width: 560px) { .final-cta { flex-direction: row; } }
+
+  footer.site-footer {
+    padding: var(--space-4) 0;
+    border-top: 1px solid var(--color-border);
+    text-align: center;
+    font-size: 13px;
+    color: var(--color-muted);
+  }
+  footer.site-footer .back-link { display: inline-block; margin-top: var(--space-1); }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
   }
 </style>
 </head>
 <body>
-<a class="skip-link" href="#main-content">本文へ移動</a>
+<a class="skip-link" href="#main-content">本文へスキップ</a>
+
+<!-- 提案用ラベル -->
+<div class="proposal-banner">CONCEPT LP｜店舗向け提案用ページ（本ページには未導入の提案が含まれます）</div>
+
+<!-- ヘッダー -->
 
 <main id="main-content">
 
-  <!-- ==================== First View ==================== -->
-  <section class="hero" aria-label="OLIVE CAFE ファーストビュー">
-    <img class="hero__image" src="images/hero.webp" alt="" fetchpriority="high">
-    <div class="hero__overlay"></div>
-    <div class="hero__content">
-      <div class="hero__inner">
-        <h1 class="hero__title">OLIVE CAFE</h1>
-        <p class="hero__tagline">Olive Enriches Your Time</p>
-        <p class="hero__lead">秋田市寺内で、コーヒーとくつろぎの時間を届けるカフェ。予約不要で気軽に立ち寄れます。</p>
-        <div class="cta-group">
-          <a class="btn btn--primary" href="https://www.google.com/maps/search/?api=1&query=%E7%A7%8B%E7%94%B0%E7%9C%8C%E7%A7%8B%E7%94%B0%E5%B8%82%E5%AF%BA%E5%86%85%E7%A5%9E%E5%B1%8B%E6%95%B713-24" target="_blank" rel="noopener noreferrer">地図を見る</a>
-          <a class="btn btn--outline" href="https://www.instagram.com/olive_cafe.akita/" target="_blank" rel="noopener noreferrer">Instagramを見る</a>
-        </div>
-      </div>
+  <!-- ファーストビュー -->
+  <section class="hero">
+    <div class="hero-media">
+      <img src="images/02_interior_community.webp" alt="" fetchpriority="high">
+      <span class="visual-caption">イメージ画像（生成画像）</span>
     </div>
-  </section>
-
-  <!-- ==================== Concept ==================== -->
-  <section id="concept" aria-labelledby="concept-heading">
     <div class="container">
-      <h2 id="concept-heading" class="section__heading">コンセプト</h2>
-      <div class="concept">
-        <div class="concept__image">
-          <img src="images/image2.webp" alt="木の梁とコンクリートの床が調和したOLIVE CAFEの店内">
-        </div>
-        <div class="concept__text">
-          <p>建物の趣を活かしながら、木の梁とコンクリートの床を組み合わせた店内は、あたたかみと落ち着きが同居する空間です。</p>
-          <p>コーヒーやドリンクは雰囲気のあるグラスで提供され、味わうひとときそのものを楽しめるよう工夫されています。</p>
-          <p>予約は不要で、営業時間内であればいつでも気軽に立ち寄れるスタイルで営業しています。</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== 店舗の特徴 ==================== -->
-  <section id="feature" class="section--surface" aria-labelledby="feature-heading">
-    <div class="container">
-      <h2 id="feature-heading" class="section__heading">店舗の特徴</h2>
-      <div class="card-grid">
-        <article class="card">
-          <div class="card__image">
-            <img src="images/image3.webp" alt="寺内の旧国道沿いに立つOLIVE CAFEの外観">
-          </div>
-          <div class="card__body">
-            <span class="card__label">01</span>
-            <h3 class="card__title">ふらっと立ち寄れる立地</h3>
-            <p class="card__text">寺内地区にあり、予約なしで気軽に入店できるカフェです。日常の中で立ち寄れる場所として営業しています。</p>
-          </div>
-        </article>
-        <article class="card">
-          <div class="card__image">
-            <img src="images/image5.webp" alt="ワイングラスで提供されるOLIVE CAFEのアイスドリンク">
-          </div>
-          <div class="card__body">
-            <span class="card__label">02</span>
-            <h3 class="card__title">コーヒー・テイクアウト対応</h3>
-            <p class="card__text">コーヒーはイートインだけでなく、テイクアウトでも楽しめます。ドリンクの見せ方にもこだわりが感じられます。</p>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== 過ごし方 ==================== -->
-  <section id="flow" aria-labelledby="flow-heading">
-    <div class="container">
-      <h2 id="flow-heading" class="section__heading">店舗での過ごし方</h2>
-      <ol class="flow-list">
-        <li>
-          <h3>商品を選ぶ</h3>
-          <p>コーヒーなどのドリンクをお選びいただけます。</p>
-        </li>
-        <li>
-          <h3>味わう</h3>
-          <p>落ち着いた雰囲気の中でゆっくりと味わえます。</p>
-        </li>
-        <li>
-          <h3>店内で過ごす</h3>
-          <p>木の梁とコンクリートが調和した空間でくつろげます。</p>
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <!-- ==================== ドリンクと軽食を楽しむ ==================== -->
-  <section id="menu" class="section--surface" aria-labelledby="menu-heading">
-    <div class="container">
-      <h2 id="menu-heading" class="section__heading">ドリンクと軽食を楽しむ</h2>
-      <div class="concept">
-        <div class="concept__image">
-          <img src="images/image4.webp" alt="OLIVE CAFEのコーヒーと軽食のセット">
-        </div>
-        <div class="concept__text">
-          <p>ドリンクと軽食を一緒に楽しみながら、ゆっくりとした時間を過ごせます。</p>
-          <p>木のテーブルで過ごすひとときは、慌ただしい日常から少し離れる時間になります。</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== 店舗情報 ==================== -->
-  <section id="info" aria-labelledby="info-heading">
-    <div class="container">
-      <h2 id="info-heading" class="section__heading">店舗情報</h2>
-      <div class="info-list">
-        <dl>
-          <div class="info-row">
-            <dt>店名</dt>
-            <dd>OLIVE CAFE（オリーブカフェ）</dd>
-          </div>
-          <div class="info-row">
-            <dt>住所</dt>
-            <dd>
-              〒011-0905<br>
-              秋田県秋田市寺内神屋敷13-24
-              <div class="info-map">
-                <a class="btn btn--dark" href="https://www.google.com/maps/search/?api=1&query=%E7%A7%8B%E7%94%B0%E7%9C%8C%E7%A7%8B%E7%94%B0%E5%B8%82%E5%AF%BA%E5%86%85%E7%A5%9E%E5%B1%8B%E6%95%B713-24" target="_blank" rel="noopener noreferrer">地図を見る（外部サイトが開きます）</a>
-              </div>
-            </dd>
-          </div>
-          <div class="info-row">
-            <dt>営業時間</dt>
-            <dd>最新の営業時間はInstagramをご確認ください。</dd>
-          </div>
-          <div class="info-row">
-            <dt>定休日</dt>
-            <dd>不定休</dd>
-          </div>
-          <div class="info-row">
-            <dt>ご来店について</dt>
-            <dd>予約不要（ウォークインのみ）</dd>
-          </div>
-          <div class="info-row">
-            <dt>Instagram</dt>
-            <dd><a href="https://www.instagram.com/olive_cafe.akita/" target="_blank" rel="noopener noreferrer">@olive_cafe.akita（外部サイトが開きます）</a></dd>
-          </div>
-        </dl>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== CTA ==================== -->
-  <section class="cta-band" aria-labelledby="cta-heading">
-    <div class="container">
-      <h2 id="cta-heading" class="cta-band__heading">来店・最新情報のご確認はこちら</h2>
-      <p class="cta-band__text">場所の確認や最新の営業状況は、地図と公式Instagramでご案内しています。</p>
+      <span class="hero-eyebrow">秋田市寺内｜地域交流型カフェ</span>
+      <h1>OLIVE CAFE<br>オリーブカフェ</h1>
+      <p class="catch">地域に、明かりを灯す。</p>
+      <p class="lead">空き店舗をリノベーションした落ち着いた空間で、年齢や性別を問わず利用しやすい、寺内地区のサードプレイスを目指すカフェです。</p>
       <div class="cta-group">
-        <a class="btn btn--dark" href="https://www.google.com/maps/search/?api=1&query=%E7%A7%8B%E7%94%B0%E7%9C%8C%E7%A7%8B%E7%94%B0%E5%B8%82%E5%AF%BA%E5%86%85%E7%A5%9E%E5%B1%8B%E6%95%B713-24" target="_blank" rel="noopener noreferrer">地図を見る</a>
-        <a class="btn btn--dark" href="https://www.instagram.com/olive_cafe.akita/" target="_blank" rel="noopener noreferrer">Instagramを見る</a>
+        <a class="btn btn-primary" href="#feature">注目の一杯を見る</a>
+        <a class="btn btn-secondary" href="https://www.instagram.com/olive_cafe.akita/" target="_blank" rel="noopener noreferrer">Instagramを見る</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- コンセプト -->
+  <section id="concept" class="surface">
+    <div class="container">
+      <span class="section-label">CONCEPT</span>
+      <h2>店舗が大切にしていること</h2>
+      <p class="section-intro">公式情報から見える、OLIVE CAFEの考え方です。</p>
+      <div class="story-block">
+        <p>飲食店が少ない秋田市寺内地区に、交流の場をつくること。それがOLIVE CAFEの出発点です。空き店舗をリノベーションした店内は、「地域に明かりを灯す」というコンセプトのもとに整えられています。</p>
+        <p>年齢や性別を問わず利用しやすい空間づくりを通じて、コーヒー・スイーツ・トーストを店内でもテイクアウトでも楽しめる、地域のサードプレイスを目指しています。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 企業・店舗の強み -->
+  <section id="strengths">
+    <div class="container">
+      <span class="section-label">STRENGTH</span>
+      <h2>公式情報から見える、OLIVE CAFEの強み</h2>
+      <p class="section-intro">複数の公式情報をもとに整理した、OLIVE CAFEならではの魅力です。</p>
+      <div class="card-grid cols-3">
+        <div class="card">
+          <div class="card-img-wrap">
+            <img src="images/01_exterior_entrance.webp" alt="緑色のドアと植栽が並ぶ、リノベーションされた店舗外観のイメージ画像" loading="lazy">
+            <span class="visual-caption">イメージ画像</span>
+          </div>
+          <span class="card-tag">STRENGTH 01</span>
+          <h3>空き店舗を生かした落ち着いた空間</h3>
+          <p>空き店舗をリノベーションして生まれた、落ち着いた雰囲気の店内。</p>
+          <p class="card-value">お客様にとっての価値：地域に元々あった建物を生かした、この場所ならではの居心地を楽しめます。</p>
+        </div>
+        <div class="card">
+          <div class="card-img-wrap">
+            <img src="images/02_interior_community.webp" alt="幅広い年代の人々が思い思いに過ごす店内のイメージ画像" loading="lazy">
+            <span class="visual-caption">イメージ画像</span>
+          </div>
+          <span class="card-tag">STRENGTH 02</span>
+          <h3>誰もが利用しやすい空間設計</h3>
+          <p>年齢や性別を問わず利用しやすいことを意識した店づくり。</p>
+          <p class="card-value">お客様にとっての価値：一人でも、家族や友人とでも、幅広い場面で気軽に立ち寄れます。</p>
+        </div>
+        <div class="card">
+          <div class="card-img-wrap">
+            <img src="images/05_takeout_counter_scene.webp" alt="カウンター越しにスタッフとお客様が言葉を交わすイメージ画像" loading="lazy">
+            <span class="visual-caption">イメージ画像</span>
+          </div>
+          <span class="card-tag">STRENGTH 03</span>
+          <h3>地域に明かりを灯すサードプレイス</h3>
+          <p>「地域に明かりを灯す」を掲げ、地域交流型カフェとしてのサードプレイスを目指す姿勢。</p>
+          <p class="card-value">お客様にとっての価値：飲食店が少ない地域で、日常的に立ち寄れる新しい居場所になります。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 創業者ストーリー -->
+  <section id="story" class="surface">
+    <div class="container">
+      <span class="section-label">STORY</span>
+      <h2>創業者ストーリー</h2>
+      <p class="section-intro">公式情報で確認できる、店主・佐藤駿さんの歩みです。</p>
+      <div class="story-block">
+        <p>店主の佐藤駿さんは、約8年間勤めた会社を退職し、飲食店が少ない寺内地区に交流の場をつくることを決意しました。</p>
+        <p>空き店舗を改装し、2024年10月23日にOLIVE CAFEを開業。店名は、佐藤さんの祖母が横手市で営んでいた喫茶店から受け継いだものです。</p>
+        <p>祖母の店の名前を受け継ぎながら、地域に明かりを灯すサードプレイスとして、新しい交流の場づくりに取り組んでいます。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 一押し商品・サービス -->
+  <section id="feature">
+    <div class="container">
+      <span class="section-label">FEATURE</span>
+      <h2>特に注目したい商品・サービス</h2>
+      <p class="section-intro">公式情報をもとに、OLIVE CAFEらしさが伝わる一杯を重点的にご紹介します。</p>
+      <div class="feature-panel">
+        <div class="feature-visual">
+          <img src="images/03_cafe_latte_closeup.webp" alt="ラテアートを施したカフェラテと、添えられた焼き菓子のイメージ画像" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:10px;">
+          <span class="visual-caption">イメージ画像（生成画像）</span>
+        </div>
+        <h3>カフェラテ</h3>
+        <p>オリジナルブレンドを中心としたコーヒーメニューの一つで、バランスの取れた味わいが紹介されています。</p>
+        <div class="feature-meta">
+          <span>コーヒー・スイーツ・トースト</span>
+          <span>店内利用・テイクアウト対応</span>
+        </div>
+        <p>落ち着いた店内でゆっくり味わうのはもちろん、テイクアウトで気軽に楽しむこともできます。価格や詳しいメニュー内容は、最新情報を公式Instagramでご確認ください。</p>
+        <div class="cta-group" style="margin-top: var(--space-2);">
+          <a class="btn btn-primary" href="https://www.instagram.com/olive_cafe.akita/" target="_blank" rel="noopener noreferrer">Instagramでメニューを見る</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 過ごし方 -->
+  <section id="experience" class="surface">
+    <div class="container">
+      <span class="section-label">HOW TO ENJOY</span>
+      <h2>OLIVE CAFEでの過ごし方</h2>
+      <p class="section-intro">公式情報から想定できる、利用イメージです。</p>
+      <div class="use-list">
+        <div class="use-item">
+          <div class="card-img-wrap">
+            <img src="images/04_breakfast_and_sweets.webp" alt="トースト、焼き菓子、カフェラテが並ぶテーブルのイメージ画像" loading="lazy">
+            <span class="visual-caption">イメージ画像</span>
+          </div>
+          <div class="use-item-body">
+            <h3>店内でゆっくり</h3>
+            <p>落ち着いた店内で、コーヒー・スイーツ・トーストを味わいながら過ごす時間。</p>
+          </div>
+        </div>
+        <div class="use-item">
+          <div class="card-img-wrap">
+            <img src="images/05_takeout_counter_scene.webp" alt="カウンターでテイクアウトのコーヒーと焼き菓子を受け渡しするイメージ画像" loading="lazy">
+            <span class="visual-caption">イメージ画像</span>
+          </div>
+          <div class="use-item-body">
+            <h3>テイクアウトで気軽に</h3>
+            <p>忙しい合間にも、コーヒーやスイーツをテイクアウトで楽しめます。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 動く新サービス試作 -->
+  <section id="proposal-quiz" class="proposal-section">
+    <div class="container">
+      <span class="proposal-label">INTERACTIVE PROTOTYPE｜動く新サービス試作</span>
+      <h2>OLIVE CAFEの過ごし方診断（試作）</h2>
+      <p class="section-intro">「あればいい」と挙げられていた、Instagramを起点にしたテイクアウト予約やイベント予約サービスの入口として、来店前に自分に合う過ごし方を見つけられる簡易診断を試作しました。これは店舗運営者向けの新サービス提案・導入アイデアであり、現在提供中のサービスではありません。</p>
+
+      <div class="proposal-note">
+        この診断結果は、公式情報で確認できているOLIVE CAFEの商品・サービス（コーヒーメニュー、スイーツ、トースト、店内利用・テイクアウト）をもとにしたカテゴリ表現です。特定の商品名・価格の断定や、効果・人気の保証は行っていません。
+      </div>
+
+      <div class="quiz-app" id="quizApp">
+        <div id="quizIntro" class="quiz-intro">
+          <h3>対象：来店を検討している方／店舗運営者</h3>
+          <p>解決したい課題：新しいお客様が、自分に合ったOLIVE CAFEの使い方をイメージしにくいこと。5つの質問に答えると、あなたに近い過ごし方タイプが分かります。</p>
+          <button type="button" class="quiz-start-btn" id="quizStartBtn">試してみる</button>
+        </div>
+
+        <form id="quizForm" style="display:none;" novalidate>
+          <p class="quiz-progress" id="quizProgress" aria-live="polite"></p>
+          <p class="quiz-question" id="quizQuestionText"></p>
+          <ul class="quiz-options" id="quizOptions"></ul>
+          <p class="quiz-warning" id="quizWarning" role="alert"></p>
+          <div class="quiz-nav">
+            <button type="button" id="quizBack">戻る</button>
+            <button type="button" id="quizNext">次へ</button>
+          </div>
+        </form>
+
+        <div id="quizResult" style="display:none;" class="quiz-result" aria-live="polite">
+          <h3 id="resultName" tabindex="-1"></h3>
+          <p class="result-summary" id="resultSummary"></p>
+          <dl class="result-detail-list">
+            <dt>そのタイプになった理由</dt>
+            <dd id="resultReason"></dd>
+            <dt>おすすめ候補</dt>
+            <dd id="resultRecommend"></dd>
+            <dt>OLIVE CAFEの強みとのつながり</dt>
+            <dd id="resultStrength"></dd>
+          </dl>
+          <div class="quiz-result-actions">
+            <a class="btn btn-primary" id="resultCta" href="#feature">関連セクションを見る</a>
+            <button type="button" class="btn btn-secondary" id="quizRestartBtn">最初からやり直す</button>
+          </div>
+        </div>
+
+        <noscript>
+          <p>この試作デモの操作にはJavaScriptが必要です。JavaScriptが無効な場合でも、OLIVE CAFEの店舗情報や既存サービスのご紹介は、このページの他のセクションから引き続きご覧いただけます。</p>
+        </noscript>
+
+        <p class="disclaimer-box">本機能は店舗運営者向けの試作デモです。現在提供中の正式サービスではありません。入力内容の保存・送信は行いません。ページを閉じると回答内容は消えます。</p>
+      </div>
+
+      <div class="proposal-note" style="margin-top: var(--space-4);">
+        <strong>導入アイデア（今後の展開案）：</strong>この診断の結果画面から、Instagramでのテイクアウト取り置き予約や、ドリップ教室などイベントの予約導線につなげることで、小さく始められる新サービスとして育てていくことができます。
+      </div>
+    </div>
+  </section>
+
+  <!-- 店舗情報 -->
+  <section id="shop-info">
+    <div class="container">
+      <span class="section-label">SHOP INFO</span>
+      <h2>店舗情報</h2>
+      <table class="info-table">
+        <tbody>
+          <tr>
+            <th scope="row">店舗名</th>
+            <td>OLIVE CAFE（オリーブカフェ）</td>
+          </tr>
+          <tr>
+            <th scope="row">所在地</th>
+            <td>〒011-0905　秋田県秋田市寺内神屋敷13-24<br>
+              <a href="https://www.google.com/maps/search/?api=1&query=%E7%A7%8B%E7%94%B0%E7%9C%8C%E7%A7%8B%E7%94%B0%E5%B8%82%E5%AF%BA%E5%86%85%E7%A5%9E%E5%B1%8B%E6%95%B713-24" target="_blank" rel="noopener noreferrer">地図で見る（Googleマップ）</a>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">営業時間・定休日</th>
+            <td>季節により変動する場合があります。最新の営業時間・定休日は公式Instagramをご確認ください。</td>
+          </tr>
+          <tr>
+            <th scope="row">テイクアウト</th>
+            <td>コーヒー・スイーツ・トーストのテイクアウトに対応しています。</td>
+          </tr>
+          <tr>
+            <th scope="row">Instagram</th>
+            <td><a href="https://www.instagram.com/olive_cafe.akita/" target="_blank" rel="noopener noreferrer">https://www.instagram.com/olive_cafe.akita/</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="final-cta">
+        <a class="btn btn-primary" href="https://www.instagram.com/olive_cafe.akita/" target="_blank" rel="noopener noreferrer">Instagramを見る</a>
+        <a class="btn btn-secondary" href="https://www.google.com/maps/search/?api=1&query=%E7%A7%8B%E7%94%B0%E7%9C%8C%E7%A7%8B%E7%94%B0%E5%B8%82%E5%AF%BA%E5%86%85%E7%A5%9E%E5%B1%8B%E6%95%B713-24" target="_blank" rel="noopener noreferrer">地図を見る</a>
       </div>
     </div>
   </section>
 
 </main>
 
-<!-- ==================== Footer ==================== -->
 <footer class="site-footer">
   <div class="container">
-    <div class="site-footer__logo">
-      <img src="images/image6.webp" alt="OLIVE CAFEのロゴマーク">
-    </div>
-    <p class="site-footer__name">OLIVE CAFE</p>
-    <nav class="site-footer__links" aria-label="フッターナビゲーション">
-      <a href="https://www.google.com/maps/search/?api=1&query=%E7%A7%8B%E7%94%B0%E7%9C%8C%E7%A7%8B%E7%94%B0%E5%B8%82%E5%AF%BA%E5%86%85%E7%A5%9E%E5%B1%8B%E6%95%B713-24" target="_blank" rel="noopener noreferrer">地図を見る</a>
-      <a href="https://www.instagram.com/olive_cafe.akita/" target="_blank" rel="noopener noreferrer">Instagram</a>
-    </nav>
-    <p class="site-footer__copyright">© OLIVE CAFE. All Rights Reserved.</p>
+    <p>OLIVE CAFE（オリーブカフェ）</p>
+    <p>&copy; OLIVE CAFE（オリーブカフェ）. All Rights Reserved.</p>
+    <a class="back-link" href="#main-content">ページの先頭へ戻る</a>
   </div>
 </footer>
+
+<script>
+(function () {
+  "use strict";
+
+  var questions = [
+    {
+      text: "来店するなら、どんなシーンをイメージしますか？",
+      options: [
+        { label: "一人で静かに読書や作業をしたい", cat: "A" },
+        { label: "近くに立ち寄ってサクッとテイクアウトしたい", cat: "B" },
+        { label: "甘いものでほっと一息つきたい", cat: "C" },
+        { label: "誰かと話しながらゆっくり過ごしたい", cat: "D" },
+        { label: "新しいことを体験してみたい", cat: "E" }
+      ]
+    },
+    {
+      text: "コーヒーの楽しみ方は、どのタイプに近いですか？",
+      options: [
+        { label: "香りやコクをじっくり味わいたい", cat: "A" },
+        { label: "忙しい合間にさっと飲みたい", cat: "B" },
+        { label: "スイーツと一緒に楽しみたい", cat: "C" },
+        { label: "誰かと同じ時間を共有したい", cat: "D" },
+        { label: "いつもと違う飲み方を試したい", cat: "E" }
+      ]
+    },
+    {
+      text: "お店での理想の滞在時間は？",
+      options: [
+        { label: "長めに、ゆったり過ごしたい", cat: "A" },
+        { label: "短時間でさっと済ませたい", cat: "B" },
+        { label: "スイーツを食べ終わるくらい", cat: "C" },
+        { label: "会話が続く限りゆっくり", cat: "D" },
+        { label: "イベントやワークショップの時間分", cat: "E" }
+      ]
+    },
+    {
+      text: "OLIVE CAFEに興味を持ったきっかけに近いものは？",
+      options: [
+        { label: "落ち着ける空間を探していた", cat: "A" },
+        { label: "テイクアウトで気軽に利用したい", cat: "B" },
+        { label: "甘いものが気になった", cat: "C" },
+        { label: "地域の人と交流したい", cat: "D" },
+        { label: "新しい体験に興味がある", cat: "E" }
+      ]
+    },
+    {
+      text: "今、一番気になることは？",
+      options: [
+        { label: "静かに過ごせる場所", cat: "A" },
+        { label: "気軽に立ち寄れる店", cat: "B" },
+        { label: "季節のスイーツ", cat: "C" },
+        { label: "地域とのつながり", cat: "D" },
+        { label: "ドリップ教室などのイベント", cat: "E" }
+      ]
+    }
+  ];
+
+  var results = {
+    A: {
+      name: "静かな読書・作業タイプ",
+      summary: "落ち着いた店内で、コーヒーとともにゆっくり自分の時間を過ごしたいタイプです。",
+      reason: "静かに過ごせる空間や、じっくり味わうコーヒーへの回答が多い傾向でした。",
+      recommend: "落ち着いた店内での、コーヒーメニューのご利用が向いています。",
+      strength: "空き店舗をリノベーションした落ち着いた空間づくりと相性のよいタイプです。",
+      ctaHref: "#strengths",
+      ctaLabel: "店舗の強みを見る"
+    },
+    B: {
+      name: "気軽テイクアウトタイプ",
+      summary: "忙しい合間にも、気軽に立ち寄って楽しみたいタイプです。",
+      reason: "短時間の利用や、テイクアウトに関する回答が多い傾向でした。",
+      recommend: "コーヒー・スイーツ・トーストのテイクアウト利用が向いています。",
+      strength: "店内・テイクアウトの両方に対応するカフェサービスと相性のよいタイプです。",
+      ctaHref: "#feature",
+      ctaLabel: "注目の一杯を見る"
+    },
+    C: {
+      name: "甘党スイーツタイプ",
+      summary: "コーヒーと一緒に、スイーツやトーストも楽しみたいタイプです。",
+      reason: "スイーツや、飲み物との組み合わせに関する回答が多い傾向でした。",
+      recommend: "コーヒーメニューとあわせて、スイーツ・トーストのご利用が向いています。",
+      strength: "コーヒー・スイーツ・トーストを楽しめるカフェサービスと相性のよいタイプです。",
+      ctaHref: "#feature",
+      ctaLabel: "注目の一杯を見る"
+    },
+    D: {
+      name: "交流・おしゃべりタイプ",
+      summary: "誰かと話しながら、地域とのつながりを感じて過ごしたいタイプです。",
+      reason: "会話や地域とのつながりに関する回答が多い傾向でした。",
+      recommend: "誰かと一緒に立ち寄り、ゆっくり会話を楽しむ利用が向いています。",
+      strength: "「地域に明かりを灯す」をコンセプトにしたサードプレイスづくりと相性のよいタイプです。",
+      ctaHref: "#concept",
+      ctaLabel: "コンセプトを見る"
+    },
+    E: {
+      name: "新体験タイプ",
+      summary: "いつもと違う体験や、新しい取り組みに関心があるタイプです。",
+      reason: "新しい体験やイベントに関する回答が多い傾向でした。",
+      recommend: "ドリップ教室などのイベントは、今後の導入アイデアとして検討されている段階です。",
+      strength: "地域との新しいつながり方を広げていく、今後の展開案と相性のよいタイプです。",
+      ctaHref: "#proposal-quiz",
+      ctaLabel: "新サービス提案を見る（現在は導入アイデアの段階です）"
+    }
+  };
+
+  var priorityOrder = ["A", "B", "C", "D", "E"];
+
+  var currentIndex = 0;
+  var answers = new Array(questions.length).fill(null);
+
+  var quizIntro = document.getElementById("quizIntro");
+  var quizStartBtn = document.getElementById("quizStartBtn");
+  var quizForm = document.getElementById("quizForm");
+  var quizProgress = document.getElementById("quizProgress");
+  var quizQuestionText = document.getElementById("quizQuestionText");
+  var quizOptions = document.getElementById("quizOptions");
+  var quizWarning = document.getElementById("quizWarning");
+  var quizBack = document.getElementById("quizBack");
+  var quizNext = document.getElementById("quizNext");
+  var quizResult = document.getElementById("quizResult");
+  var quizRestartBtn = document.getElementById("quizRestartBtn");
+
+  function renderQuestion() {
+    quizWarning.textContent = "";
+    var q = questions[currentIndex];
+    quizProgress.textContent = "質問 " + (currentIndex + 1) + " / " + questions.length;
+    quizQuestionText.textContent = q.text;
+    quizOptions.innerHTML = "";
+
+    q.options.forEach(function (opt, i) {
+      var li = document.createElement("li");
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "quiz-option";
+      btn.textContent = opt.label;
+      var selected = answers[currentIndex] === i;
+      btn.setAttribute("aria-pressed", selected ? "true" : "false");
+      btn.addEventListener("click", function () {
+        answers[currentIndex] = i;
+        var allBtns = quizOptions.querySelectorAll(".quiz-option");
+        allBtns.forEach(function (b) { b.setAttribute("aria-pressed", "false"); });
+        btn.setAttribute("aria-pressed", "true");
+        quizWarning.textContent = "";
+      });
+      li.appendChild(btn);
+      quizOptions.appendChild(li);
+    });
+
+    quizBack.disabled = currentIndex === 0;
+    quizNext.textContent = currentIndex === questions.length - 1 ? "結果を見る" : "次へ";
+  }
+
+  function startQuiz() {
+    currentIndex = 0;
+    answers = new Array(questions.length).fill(null);
+    quizIntro.style.display = "none";
+    quizResult.style.display = "none";
+    quizForm.style.display = "block";
+    renderQuestion();
+  }
+
+  function showResult() {
+    var scores = { A: 0, B: 0, C: 0, D: 0, E: 0 };
+    answers.forEach(function (ansIndex, qIndex) {
+      if (ansIndex === null) { return; }
+      var cat = questions[qIndex].options[ansIndex].cat;
+      scores[cat] += 1;
+    });
+
+    // 同点の場合は、最後の質問（5問目）で選んだカテゴリーを優先する。
+    // それでも決まらない場合のみ、A→B→C→D→Eの順を採用する。
+    var lastCat = null;
+    var lastAnswerIndex = answers[answers.length - 1];
+    if (lastAnswerIndex !== null) {
+      lastCat = questions[questions.length - 1].options[lastAnswerIndex].cat;
+    }
+
+    var maxScore = -1;
+    priorityOrder.forEach(function (cat) {
+      if (scores[cat] > maxScore) { maxScore = scores[cat]; }
+    });
+    var topCats = priorityOrder.filter(function (cat) { return scores[cat] === maxScore; });
+
+    var winner;
+    if (topCats.length === 1) {
+      winner = topCats[0];
+    } else if (lastCat !== null && topCats.indexOf(lastCat) !== -1) {
+      winner = lastCat;
+    } else {
+      winner = topCats[0];
+    }
+
+    var r = results[winner];
+    document.getElementById("resultName").textContent = r.name;
+    document.getElementById("resultSummary").textContent = r.summary;
+    document.getElementById("resultReason").textContent = r.reason;
+    document.getElementById("resultRecommend").textContent = r.recommend;
+    document.getElementById("resultStrength").textContent = r.strength;
+    var cta = document.getElementById("resultCta");
+    cta.href = r.ctaHref;
+    cta.textContent = r.ctaLabel;
+
+    quizForm.style.display = "none";
+    quizResult.style.display = "block";
+
+    var resultHeading = document.getElementById("resultName");
+    resultHeading.focus();
+  }
+
+  quizStartBtn.addEventListener("click", startQuiz);
+
+  quizNext.addEventListener("click", function () {
+    if (answers[currentIndex] === null) {
+      quizWarning.textContent = "選択肢を選んでから次へ進んでください。";
+      return;
+    }
+    if (currentIndex === questions.length - 1) {
+      showResult();
+    } else {
+      currentIndex += 1;
+      renderQuestion();
+    }
+  });
+
+  quizBack.addEventListener("click", function () {
+    if (currentIndex > 0) {
+      currentIndex -= 1;
+      renderQuestion();
+    }
+  });
+
+  quizRestartBtn.addEventListener("click", function () {
+    quizResult.style.display = "none";
+    quizIntro.style.display = "block";
+  });
+})();
+</script>
 
 </body>
 </html>
